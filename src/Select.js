@@ -223,6 +223,11 @@ class Select extends React.Component {
 			return;
 		}
 
+		/* Allow selection of tags */
+		if (this.props.multi && event.target.className.indexOf('Select-value-label') >= 0) {
+			return;
+		}
+
 		// prevent default event handlers
 		event.stopPropagation();
 		event.preventDefault();
